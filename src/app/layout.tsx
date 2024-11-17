@@ -16,6 +16,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Almighty-Kのピアノ演奏動画サイト",
   description: "Almighty-Kのピアノ演奏動画サイトです。Nextで作成しています",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
