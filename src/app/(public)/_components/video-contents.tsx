@@ -2,9 +2,19 @@ import { client } from "../_libs/client";
 import { VideoContent } from "../_libs/types";
 import { VideoCard } from "./video-card";
 
-export async function VideoContents() {
+interface VideoContentsProps {
+  currentCategory: string | null;
+}
+
+export async function VideoContents({ currentCategory }: VideoContentsProps) {
   const videos = await client.getList<VideoContent>({
     endpoint: "videos",
+    queries: currentCategory
+      ? { filters: `category[contains]${currentCategory}` }
+      : undefined,
+    customRequestInit: {
+      cache: "force-cache",
+    },
   });
   const videoContents = {
     top: videos.contents.filter((content) => content.order === 1),
