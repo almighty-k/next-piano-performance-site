@@ -12,7 +12,7 @@ export default async function Page({
   }>;
 }) {
   const params = await searchParams;
-  const currentCategory = params?.category || null;
+  const currentCategory = params?.category;
 
   return (
     <div className="flex flex-col gap-7">

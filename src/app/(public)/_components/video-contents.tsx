@@ -4,7 +4,7 @@ import { VideoContent } from "../_libs/types";
 import { VideoCard } from "./video-card";
 
 interface VideoContentsProps {
-  currentCategory: string | null;
+  currentCategory: string | undefined;
 }
 
 const getVideos = unstable_cache(
