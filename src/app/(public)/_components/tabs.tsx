@@ -31,11 +31,9 @@ export function Tabs({ tabItems }: TabsProps) {
       {tabItems.map((tabItem) => (
         <button
           key={tabItem.category}
-          className={[
-            "rounded-t-md px-3 py-2 hover:bg-white/5",
-            category === tabItem.category ? "border-b-2 border-white" : "",
-          ].join(" ")}
+          className="rounded-t-md px-3 py-2 hover:bg-white/5 data-[current=true]:border-b-2 data-[current=true]:border-white"
           onClick={() => handleClick(tabItem.category)}
+          data-current={category === tabItem.category}
         >
           {tabItem.label}
         </button>

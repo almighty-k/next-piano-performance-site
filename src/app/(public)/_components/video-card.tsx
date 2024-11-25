@@ -8,11 +8,8 @@ interface CategoryChipProps {
 function CategoryChip({ category }: CategoryChipProps) {
   return (
     <span
-      className={[
-        `inline-block w-28 rounded-md py-2 text-center text-sm`,
-        category === "classic" ? "bg-green/10 text-green" : "",
-        category === "anime" ? "bg-purple/10 text-purple" : "",
-      ].join(" ")}
+      className="inline-block w-28 rounded-md py-2 text-center text-sm data-[category=classic]:bg-green/10 data-[category=classic]:text-green data-[category=anime]:bg-purple/10 data-[category=anime]:text-purple"
+      data-category={category}
     >
       {category === "classic" ? "クラシック" : "アニメ"}
     </span>
